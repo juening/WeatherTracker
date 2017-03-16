@@ -1,7 +1,6 @@
-
 import axios from 'axios';
-
-import * as types from './constants';
+import { browserHistory } from 'react-router';
+import * as types from './types';
 
 
 const ROOT_URL = 'http://localhost:3090';
@@ -11,7 +10,22 @@ const ROOT_URL = 'http://localhost:3090';
 //redirect the toute to '/feature
 //if the request is bad, show an error
 export function signinUser({ email, password }) {
-    return function(dispatch) {
-        axios.post(`${ROOT_URL}/signin`, { email:email, password:password });
-    }
+  return function(dispatch) {
+    axios.post(`${ROOT_URL}/signin`, {email:email, password:password})
+    .then(response => {
+      dispatch({ type: types.AUTH_USER});
+      localStorage.setItem('token', response.data.token);
+      browserHistory.push('/feature');
+    })
+    .catch(()=>{
+      dispatch(authError('Bad Login Info'));
+    });
+  };
+}
+
+export function authError(error){
+  return {
+    type: types.AUTH_ERROR,
+    payload: error
+  };
 }
