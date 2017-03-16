@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
-import * as types from './types';
+import types from './types';
 
 
 const ROOT_URL = 'http://localhost:3090';
@@ -13,7 +13,7 @@ export function signinUser({ email, password }) {
   return function(dispatch) {
     axios.post(`${ROOT_URL}/signin`, {email:email, password:password})
     .then(response => {
-      dispatch({ type: types.AUTH_USER});
+      dispatch({ type: types.AUTH_USER });
       localStorage.setItem('token', response.data.token);
       browserHistory.push('/feature');
     })
@@ -28,4 +28,10 @@ export function authError(error){
     type: types.AUTH_ERROR,
     payload: error
   };
+}
+
+export function signoutUser() {
+    console.log('signing out...');
+    localStorage.removeItem('token');
+    return { type: types.UNAUTH_USER };
 }

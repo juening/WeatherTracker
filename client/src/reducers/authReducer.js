@@ -1,4 +1,4 @@
-import * as types from '../actions/types';
+import types from '../actions/types';
 
 export default function (state={}, action) {
     switch(action.type) {
@@ -6,6 +6,7 @@ export default function (state={}, action) {
             return {...state, authenticated: true };
 
         case types.UNAUTH_USER:
+            console.log('unauth');
             return {...state, authenticated: false };
 
         case types.AUTH_ERROR:
@@ -14,4 +15,5 @@ export default function (state={}, action) {
         default:
             return state;
     }
+    
 }
