@@ -12,6 +12,9 @@ export default function (state={}, action) {
         case types.AUTH_ERROR:
             return {...state, error: action.payload};
 
+        case types.FETCH_MESSAGE:
+            return {...state, message: action.payload.state };
+
         default:
             return state;
     }

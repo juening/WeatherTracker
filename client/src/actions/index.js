@@ -50,3 +50,15 @@ export function signupUser({email, password}) {
       })
   }
 }
+
+export function fetchMessage() {
+  return function(dispatch) {
+    axios.get(ROOT_URL, {headers: { authorization: localStorage.getItem('token') }})
+      .then(response=>{
+        dispatch({
+          type: types.FETCH_MESSAGE,
+          payload: response.data
+        });
+      });
+  }
+}
