@@ -3,7 +3,7 @@ import types from '../actions/types';
 export default function (state={}, action) {
     switch(action.type) {
         case types.AUTH_USER:
-            return {...state, authenticated: true };
+            return {...state, error:'', authenticated: true };
 
         case types.UNAUTH_USER:
             console.log('unauth');
