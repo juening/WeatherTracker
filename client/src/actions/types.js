@@ -3,5 +3,6 @@ export default {
     UNAUTH_USER: 'unauth_user',
     AUTH_ERROR: 'auth_error',
     FETCH_MESSAGE: 'fetch_message',
-    FETCH_WEATHER: 'fetch_weather'    
+    FETCH_WEATHER: 'fetch_weather',
+    FETCH_CURRENT: 'fetch_current'    
 }
