@@ -1,15 +1,32 @@
-.box {
-    height:300px;
-    background-color: #333333; 
-    color: #ffffff;
-    margin: 10 5 5 5;
-}
-
-.error {
-    color:red;
-}
 
 body {
-    background-color: #333333; color: #ffffff;
+    background-color: #ffffff; 
+    color: #000000;
+}
+
+table, th {
+    text-align: left;
+}
+
+.panel-top {
+    margin: 20px 0 10px 0;
+}
+.panel-center {
+    margin: 20px 0 10px 0;
+    display:inline
+}
+.panel-bottom {
+    margin: 20px 0 10px 0;
+}
+.weather-list {
+    margin: 20px 0 0 0;
+}
+
+.box-temp {
+    font-size: 1.5em;
+    
+}
+.error {
+    color:red;
 }
 

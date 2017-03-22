@@ -23,7 +23,7 @@ class Header extends Component {
     }
     render() {
         return (
-            <nav className="navbar navbar-light">
+            <nav className="navbar navbar-light col-sm-6 col-sm-offset-3">
                 <Link to="/" className="navbar-brand">Weather Tracker</Link>
                 <ul className="nav navbar-nav">
                     {this.renderLinks()}

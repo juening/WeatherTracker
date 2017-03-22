@@ -1,9 +1,9 @@
 import axios from 'axios';
 import { browserHistory } from 'react-router';
 import types from './types';
+import { API_KEY } from '../../config';
 
-const API_KEY = '81849dcf60c72d2a38d3a1ed3551ec98';
-let CNT = 6;
+let CNT = 7;
 let UNIT = 'imperial';
 const DAILY_FORECAST_API_URL = `http://api.openweathermap.org/data/2.5/forecast/daily?appid=${API_KEY}&units=${UNIT}&cnt=${CNT}`;
 //const ZIP_API_URL = `http://api.openweathermap.org/data/2.5/forecast/daily?appid=${API_KEY}&units=${UNIT}&cnt=${CNT}`;

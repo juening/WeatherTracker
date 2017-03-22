@@ -8,10 +8,11 @@ class HomePage extends Component {
 
     render() {
         return (
-            <section className="container">
-                <h1>Welcome to Weather Tracker</h1>
-                <SearchBar />
+            <section className="col-sm-6 col-sm-offset-3">
+                
+                
                 <div className="row">
+                    <SearchBar />
                     <WeatherBox />
                     <WeatherList />
                 </div>

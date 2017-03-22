@@ -5,14 +5,14 @@ import WeatherRow from './weatherrow';
 class WeatherList extends Component {
     render() {
         return (
-            <table className="col-sm-6" >
+            <table className="col-sm-12 weather-list" >
                 <thead>
                     <tr>
-                        <th>Date</th>
+                        <th>Day</th>
                         <th>Weather</th>
-                        <th>Temp Day</th>
-                        <th>Temp Morn</th>
-                        <th>Temp Night</th>
+                        <th>Day</th>
+                        <th>Morning</th>
+                        <th>Night</th>
                         <th>Humidity</th>
                     </tr>
                 </thead>
