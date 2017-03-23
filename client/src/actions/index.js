@@ -74,9 +74,9 @@ export function fetchWeather(p1, p2) {
   if(p2) {
     url = `${DAILY_FORECAST_API_URL}&lon=${p1}&lat=${p2}`;
   } else if(isNaN(p1)) {
-    url = `${DAILY_FORECAST_API_URL}&q=${city},us`;
+    url = `${DAILY_FORECAST_API_URL}&q=${p1},us`;
   } else {
-    url = `${DAILY_FORECAST_API_URL}&zip=${city},us`;
+    url = `${DAILY_FORECAST_API_URL}&zip=${p1},us`;
   }
 
   return function(dispatch) {
