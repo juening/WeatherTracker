@@ -18,25 +18,27 @@ class Signup extends Component {
     render() {
         const { handleSubmit, fields: {email, password, passwordConfirm}} = this.props;
         return (
-            <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
-                <fieldset className="form-group">
-                    <label>Email: </label>
-                    <input className="form-control" {...email} type="email" />
-                    {email.touched && email.error && <div className="error">{email.error}</div>}
-                </fieldset>
-                <fieldset className="form-group">
-                    <label>Password: </label>
-                    <input className="form-control" {...password} type="password" />
-                    {password.touched && password.error && <div className="error">{password.error}</div>}
-                </fieldset>
-                <fieldset className="form-group">
-                    <label>Confirm Password: </label>
-                    <input className="form-control" {...passwordConfirm} type="password" />
-                    {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}                    
-                </fieldset>
-                {this.renderAlert()}
-                <button className="btn btn-primary" >Sign Up </button>
-            </form>
+            <div className="col-sm-6 col-sm-offset-3">
+                <form onSubmit={handleSubmit(this.handleFormSubmit.bind(this))}>
+                    <fieldset className="form-group">
+                        <label>Email: </label>
+                        <input className="form-control" {...email} type="email" />
+                        {email.touched && email.error && <div className="error">{email.error}</div>}
+                    </fieldset>
+                    <fieldset className="form-group">
+                        <label>Password: </label>
+                        <input className="form-control" {...password} type="password" />
+                        {password.touched && password.error && <div className="error">{password.error}</div>}
+                    </fieldset>
+                    <fieldset className="form-group">
+                        <label>Confirm Password: </label>
+                        <input className="form-control" {...passwordConfirm} type="password" />
+                        {passwordConfirm.touched && passwordConfirm.error && <div className="error">{passwordConfirm.error}</div>}                    
+                    </fieldset>
+                    {this.renderAlert()}
+                    <button className="btn btn-primary" >Sign Up </button>
+                </form>
+            </div>
         );
     }
 }

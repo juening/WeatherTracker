@@ -8,7 +8,7 @@ class Signout extends Component {
     }
     render() {
         return (
-            <div>Sorry to see you go...</div>
+            <div className="col-sm-6 col-sm-offset-3">Sorry to see you go...</div>
         );
     }
 }

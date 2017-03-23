@@ -8,7 +8,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <section className="col-sm-6 col-sm-offset-3">
+            <section className="col-sm-6 col-sm-offset-3" style={appStyle}>
                 
                 
                 <div className="row">
@@ -20,5 +20,10 @@ class HomePage extends Component {
         );
     }
 }
+
+const appStyle = {
+    backgroundColor: "#18bc9c",
+    color:"#ffffff"
+};
 
 export default HomePage;

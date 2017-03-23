@@ -70,15 +70,8 @@ export function fetchMessage() {
 }
 
 export function fetchWeather(p1, p2) {
-  let url='';
-  if(p2) {
-    url = `${DAILY_FORECAST_API_URL}&lon=${p1}&lat=${p2}`;
-  } else if(isNaN(p1)) {
-    url = `${DAILY_FORECAST_API_URL}&q=${p1},us`;
-  } else {
-    url = `${DAILY_FORECAST_API_URL}&zip=${p1},us`;
-  }
-
+  const urlAddon = urlTransform(p1, p2);
+  const url = `${DAILY_FORECAST_API_URL}${urlAddon}`;
   return function(dispatch) {
     axios.get(url).then(response => {
       console.log(response.data);
@@ -90,8 +83,22 @@ export function fetchWeather(p1, p2) {
   };
 }
 
-export function fetchCurrent(lon, lat) {
-  let url = `${CURRENT_API_URL}&lon=${lon}&lat=${lat}`;
+function urlTransform(p1, p2) {
+  let urlAddon='';
+  if(p2) {
+    urlAddon += `&lon=${p1}&lat=${p2}`;
+  } else if(isNaN(p1)) {
+    urlAddon += `&q=${p1},us`;
+  } else {
+    urlAddon += `&zip=${p1},us`;
+  }
+  return urlAddon;
+}
+
+export function fetchCurrent(p1, p2) {
+  const urlAddon = urlTransform(p1, p2);
+  const url = `${CURRENT_API_URL}${urlAddon}`;
+
   return function(dispatch) {
     axios.get(url).then(response=>{
       console.log(response.data);

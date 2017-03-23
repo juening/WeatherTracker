@@ -1,7 +1,7 @@
 
 body {
-    background-color:#333333; 
-    color: #ffffff;
+    background-color:#eee; 
+    
 }
 
 table, th {
@@ -26,7 +26,26 @@ table, th {
     font-size: 1.5em;
     
 }
+
+.search-input {
+    border-radius: 50,
+
+}
 .error {
     color:red;
 }
 
+th {
+    text-align: center
+}
+
+form .form-control::-moz-placeholder {
+  color: #fff;
+  opacity: 1;
+}
+form .form-control:-ms-input-placeholder {
+  color: #fff;
+}
+form .form-control::-webkit-input-placeholder {
+  color: #fff;
+}

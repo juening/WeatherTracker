@@ -36,14 +36,14 @@ class WeatherBox extends Component {
         if(!this.props.currentWeather) {
             return <h1></h1>;
         }
-        const { currentWeather } = this.props;
+        const { currentWeather, city } = this.props;
         const date = utcToLocalTime(currentWeather.dt);
-        console.log('city', this.props.currentWeather);
+
         return (
             <div className="box col-xs-12">
                 <div className="row panel-top" >
                     <div className="col-xs-8 text-left">
-                        {this.props.currentWeather.name}
+                        {city.name}, {city.country}
                     </div> 
                     <div className="col-xs-4 text-right">
                         
@@ -56,7 +56,7 @@ class WeatherBox extends Component {
                         <p className="box-temp">
                             <i className={iconTranform(this.props.currentWeather.weather[0].icon, this.props.currentWeather.weather[0].id)} ></i>
                            
-                            { Math.round(currentWeather.main.temp) }°F 
+                            &nbsp;&nbsp;{ Math.round(currentWeather.main.temp) }°F 
                         </p>
                        
                     </div>

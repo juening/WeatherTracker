@@ -23,7 +23,7 @@ class Header extends Component {
     }
     render() {
         return (
-            <nav className="navbar navbar-light col-sm-6 col-sm-offset-3">
+            <nav className="navbar navbar-light col-sm-6 col-sm-offset-3" style={appStyle} >
                 <Link to="/" className="navbar-brand">Weather Tracker</Link>
                 <ul className="nav navbar-nav">
                     {this.renderLinks()}
@@ -32,6 +32,10 @@ class Header extends Component {
         );
     }
 }
+
+const appStyle = {
+    backgroundColor: "#2C3E55"
+};
 
 function mapStateToProps(state) {
     return { authenticated: state.auth.authenticated };
