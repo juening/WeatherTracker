@@ -27,7 +27,7 @@ class SearchBar extends Component {
         return (
             <div className="search-bar">
                 <form onSubmit={this.onFormSubmit} className="form-group">
-                    <div className="col-xs-9" style={searchBoxStyle}>
+                    <div className="col-xs-10" style={searchBoxStyle}>
                         <input type="text" 
                             value={this.state.cityName}
                             placeholder="Boston"
@@ -35,7 +35,7 @@ class SearchBar extends Component {
                             onChange={this.onInputChange}
                             style={searchInputStyle} /> 
                     </div>
-                    <div className="col-xs-3">
+                    <div className="col-xs-2 text-right">
                         <button type="submit"  style={searchButtonStyle}> 
                             <i className="fa fa-search" style={iconStyle} ></i>
                         </button>
@@ -49,28 +49,28 @@ class SearchBar extends Component {
 
 const searchBoxStyle = {
     borderRadius: 50,
-    border: "2px solid #18bc9f",
+    border: "2px solid #e3bb88",
     padding: 10,
     paddingLeft: 20
 };
 
 const searchInputStyle = {
-    backgroundColor: "#1fcc90",
+    backgroundColor: "#d89864",
     border: "none",
     width: "100%"
 };
 
 const searchButtonStyle = {
-  backgroundColor: "#18bc9f",
+  backgroundColor: "#e3bb88",
   borderRadius: 50,
-  border: "2px solid #1fcc90",
+  border: "2px solid #d89864",
   cursor: "pointer",
   width: '45px',
   height: '45px'
 };
 
 const iconStyle ={
-    backgroundColor: "#18bc9f",
+    backgroundColor: "#e3bb88",
     fontSize: 16
 };
 

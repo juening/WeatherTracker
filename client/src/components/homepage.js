@@ -8,9 +8,7 @@ class HomePage extends Component {
 
     render() {
         return (
-            <section className="col-sm-6 col-sm-offset-3" style={appStyle}>
-                
-                
+            <section className="col-sm-6 col-sm-offset-3" >   
                 <div className="row">
                     <SearchBar />
                     <WeatherBox />
@@ -21,9 +19,7 @@ class HomePage extends Component {
     }
 }
 
-const appStyle = {
-    backgroundColor: "#18bc9c",
-    color:"#ffffff"
-};
+const imageUrl = 'https://d13yacurqjgara.cloudfront.net/users/780072/screenshots/2227157/attachments/414102/Blood.png';
+
 
 export default HomePage;

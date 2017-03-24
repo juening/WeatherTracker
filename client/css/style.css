@@ -1,11 +1,18 @@
 
 body {
     background-color:#eee; 
-    
+    font-size: 200%;
 }
 
-table, th {
-    text-align: left;
+table {
+   border: 2px solid #d89864;
+}
+
+.box {
+    padding: 20px 0 30px 5px;
+    border: 2px solid #d89864;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 .panel-top {
@@ -35,9 +42,12 @@ table, th {
     color:red;
 }
 
-th {
-    text-align: center
+th, td {
+    text-align: center;
+    padding: 10px;
+    border: none;
 }
+
 
 form .form-control::-moz-placeholder {
   color: #fff;

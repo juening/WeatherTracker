@@ -5,7 +5,7 @@ import WeatherRow from './weatherrow';
 class WeatherList extends Component {
     render() {
         return (
-            <table className="col-sm-12 weather-list text-center" >
+            <table className="col-sm-12 weather-list text-center weather-list" >
                 <thead>
                     <tr>
                         <th>Day</th>
