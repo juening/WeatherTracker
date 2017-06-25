@@ -6,11 +6,9 @@ export default function (state={weatherList:[], city:'', current: null }, action
             return { ...state, city: action.payload.city, weatherList:action.payload.list };
 
         case types.FETCH_CURRENT:
-        
             return {...state, current: action.payload };
-        
+
         default:
             return state;
     }
 }
-

@@ -19,7 +19,7 @@ class HomePage extends Component {
     }
 }
 
-const imageUrl = 'https://d13yacurqjgara.cloudfront.net/users/780072/screenshots/2227157/attachments/414102/Blood.png';
+
 
 
 export default HomePage;

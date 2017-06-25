@@ -1,20 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import { fetchWeather, fetchCurrent } from '../actions/index'; 
+import { fetchWeather, fetchCurrent } from '../actions/index';
 
 class SearchBar extends Component {
     constructor(props) {
         super(props);
-
-        this.state = {cityName: ''};
+        this.state = {cityName: 'Boston'};
         this.onInputChange = this.onInputChange.bind(this);
         this.onFormSubmit = this.onFormSubmit.bind(this);
     }
 
     onInputChange(event) {
         this.setState({ cityName: event.target.value });
-    } 
+    }
 
     onFormSubmit(event) {
         event.preventDefault();
@@ -28,16 +27,15 @@ class SearchBar extends Component {
             <div className="search-bar">
                 <form onSubmit={this.onFormSubmit} className="form-group">
                     <div className="col-xs-10" style={searchBoxStyle}>
-                        <input type="text" 
+                        <input type="text"
                             value={this.state.cityName}
-                            placeholder="Boston"
                             className="form-control"
                             onChange={this.onInputChange}
-                            style={searchInputStyle} /> 
+                            style={searchInputStyle} />
                     </div>
                     <div className="col-xs-2 text-right">
-                        <button type="submit"  style={searchButtonStyle}> 
-                            <i className="fa fa-search" style={iconStyle} ></i>
+                        <button type="submit"  style={searchButtonStyle}>
+                            <i className="fa fa-search" style={iconStyle} >GO</i>
                         </button>
                     </div>
                 </form>
@@ -66,7 +64,8 @@ const searchButtonStyle = {
   border: "2px solid #d89864",
   cursor: "pointer",
   width: '45px',
-  height: '45px'
+  height: '45px',
+  color: '#333'
 };
 
 const iconStyle ={

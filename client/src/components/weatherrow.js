@@ -3,6 +3,7 @@ import React from 'react';
 
 const WeatherRow = ({weather}) => {
     const date = utcToLocalTime(weather.dt);
+    console.log(weather);
     return (
         <tr>
             <td>{ date.substring(0,3) }  </td>

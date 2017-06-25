@@ -17,9 +17,10 @@ const ROOT_URL = 'http://localhost:3090';
 //if the request is bad, show an error
 export function signinUser({ email, password }) {
   return function(dispatch) {
-    axios.post(`${ROOT_URL}/signin`, {email:email, password:password})
+    axios.post(`${ROOT_URL}/api/signin`, {email:email, password:password})
     .then(response => {
-      dispatch({ type: types.AUTH_USER });
+      console.log(response);
+      dispatch({ type: types.AUTH_USER, payload: response.data.cities });
       localStorage.setItem('token', response.data.token);
       browserHistory.push('/feature');
     })
@@ -44,7 +45,7 @@ export function signoutUser() {
 
 export function signupUser({email, password}) {
   return function(dispatch) {
-    axios.post(`${ROOT_URL}/signup`, { email: email, password: password})
+    axios.post(`${ROOT_URL}/api/signup`, { email: email, password: password})
       .then(response => {
         dispatch({ type:types.AUTH_USER });
         localStorage.setItem('token', response.data.token);
@@ -57,17 +58,17 @@ export function signupUser({email, password}) {
   }
 }
 
-export function fetchMessage() {
-  return function(dispatch) {
-    axios.get(ROOT_URL, {headers: { authorization: localStorage.getItem('token') }})
-      .then(response=>{
-        dispatch({
-          type: types.FETCH_MESSAGE,
-          payload: response.data
-        });
-      });
-  }
-}
+// export function fetchMessage() {
+//   return function(dispatch) {
+//     axios.get(`${ROOT_URL}/api`, {headers: { authorization: localStorage.getItem('token') }})
+//       .then(response=>{
+//         dispatch({
+//           type: types.FETCH_MESSAGE,
+//           payload: response.data
+//         });
+//       });
+//   }
+// }
 
 export function fetchWeather(p1, p2) {
   const urlAddon = urlTransform(p1, p2);
