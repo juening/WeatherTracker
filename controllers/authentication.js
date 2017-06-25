@@ -37,7 +37,7 @@ exports.signup = function(req, res, next) {
       lastName: lastName,
       cities:cities
     });
-    
+
     user.save(function(err) {
       if(err) { return next(err); }
       //respond to request to indicate the user was created
@@ -49,5 +49,12 @@ exports.signup = function(req, res, next) {
 
 
 exports.signin = function(req, res, next) {
-  res.send({ token: tokenForUser(req.user)});
+  console.info(req.user);
+  User.findById({_id: req.user._id}, function(err, user){
+    if(err){
+      console.error(err);
+    }
+    res.send({token: tokenForUser(req.user), cities:user.cities});
+  })
+  // res.send({ });
 };

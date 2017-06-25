@@ -78,4 +78,8 @@ function mapDispatchToProps(dispatch) {
     return bindActionCreators({ fetchWeather, fetchCurrent }, dispatch );
 }
 
+function mapStateToProps(state) {
+  return {authenticated: state.auth.authenticated}
+}
+
 export default connect(null, mapDispatchToProps) (SearchBar);

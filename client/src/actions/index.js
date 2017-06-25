@@ -19,7 +19,7 @@ export function signinUser({ email, password }) {
   return function(dispatch) {
     axios.post(`${ROOT_URL}/api/signin`, {email:email, password:password})
     .then(response => {
-      console.log(response);
+      console.log(response.data.cities);
       dispatch({ type: types.AUTH_USER, payload: response.data.cities });
       localStorage.setItem('token', response.data.token);
       browserHistory.push('/feature');
@@ -75,7 +75,7 @@ export function fetchWeather(p1, p2) {
   const url = `${DAILY_FORECAST_API_URL}${urlAddon}`;
   return function(dispatch) {
     axios.get(url).then(response => {
-      console.log(response.data);
+    //  console.log(response.data);
       dispatch({
         type: types.FETCH_WEATHER,
         payload: response.data
@@ -102,7 +102,7 @@ export function fetchCurrent(p1, p2) {
 
   return function(dispatch) {
     axios.get(url).then(response=>{
-      console.log(response.data);
+    //  console.log(response.data);
       dispatch({
         type: types.FETCH_CURRENT,
         payload: response.data
