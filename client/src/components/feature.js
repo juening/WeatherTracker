@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
 
-import SearchBar from './searchbar';
+import SearchForm from './searchform';
 import WeatherList from './weatherlist';
 
 class Feature extends Component {
@@ -15,10 +15,12 @@ class Feature extends Component {
       const { cities } = this.props;
       console.log(cities);
       return (
-            <div className="col-sm-6 col-sm-offset-3" >
-              <SearchBar />
+          <section className='col-sm-6 col-sm-offset-3'>
+            <div className='row'>
+              <SearchForm />
               <WeatherList cities={cities}/>
             </div>
+          </section>
         );
     }
 }

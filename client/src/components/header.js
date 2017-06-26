@@ -5,12 +5,15 @@ import { Link } from 'react-router';
 class Header extends Component {
     renderLinks() {
         if(this.props.authenticated) {
-            return (
+            return [
                 <li className="nav-item">
-                    <Link className="nav-link" to="/feature">Watchlist</Link>
-                    <Link className="nav-link" to="/signout">Sign Out</Link>
+                    <Link className="nav-link" to="/feature" key={1}>Watchlist</Link>
+
+                </li>,
+                <li className="nav-item">
+                    <Link className="nav-link" to="/signout" key={2}>Sign Out</Link>
                 </li>
-            );
+            ];
         } else {
             return [
                 <li className="nav-item" key={1}>
